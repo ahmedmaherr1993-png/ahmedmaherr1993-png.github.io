@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Design Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--ink:#1d1f22;--muted:#61666d;--accent:#2d5bd1;--line:#e3e2dc}
+@media (prefers-color-scheme:dark){:root{--bg:#131416;--card:#1b1d21;--ink:#e8e9eb;--muted:#9aa0a8;--accent:#8aa8f5;--line:#2b2e33;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Figtree,system-ui,sans-serif}
+main{max-width:960px;margin:0 auto;padding:56px max(16px,env(safe-area-inset-left,0px)) 72px}
+h1{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:clamp(34px,6vw,56px);line-height:1.1;margin:0 0 12px}
+p.lead{color:var(--muted);font-size:18px;max-width:52ch;margin:0 0 40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+a.card{display:grid;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;color:inherit;text-decoration:none}
+a.card:hover{border-color:var(--accent)}
+.card small{color:var(--accent);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:12px}
+.card h2{margin:0;font-size:20px}.card p{margin:0;color:var(--muted)}
+footer{margin-top:48px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<h1>Websites for small businesses</h1>
+<p class="lead">Custom, mobile-first websites and landing pages in English and Arabic. These are design samples built for fictional businesses.</p>
+<div class="grid">
+<a class="card" href="cafe/"><small>Arabic · RTL</small><h2>Specialty coffee shop</h2><p>Interactive menu and table booking.</p></a>
+<a class="card" href="clinic/"><small>English</small><h2>Dental clinic</h2><p>Live opening hours, price table, appointment picker.</p></a>
+<a class="card" href="store/"><small>English · E-commerce</small><h2>Handmade pottery store</h2><p>Product filters and a working cart.</p></a>
+</div>
+<footer>Available for projects on freelance platforms.</footer>
+</main>
+</body>
+</html>

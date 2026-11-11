@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>بُن وحِكاية</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+/* Layout: RTL, a tall menu-board column beside a story column; ticket-stub reservation at the end */
+:root{
+  --bg:#f3ece2; --paper:#fbf7f1; --ink:#2b1d14; --muted:#7a6656;
+  --roast:#6b3a1f; --crema:#c98a4b; --line:#e2d5c4;
+  --display:"Reem Kufi","Tajawal",system-ui,sans-serif;
+  --body:"Tajawal",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1a120d; --paper:#241912; --ink:#f1e6d8; --muted:#b59d86;
+  --roast:#e0a46b; --crema:#d7955a; --line:#3a2a1f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1a120d; --paper:#241912; --ink:#f1e6d8; --muted:#b59d86;
+  --roast:#e0a46b; --crema:#d7955a; --line:#3a2a1f; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.7;direction:rtl}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--crema);outline-offset:3px}
+header{padding-block:22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{font-family:var(--display);font-size:26px;font-weight:700;color:var(--roast)}
+nav{display:flex;gap:22px;flex-wrap:wrap;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)} nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;padding-block:40px 64px;align-items:end}
+.hero h1{font-family:var(--display);font-size:clamp(40px,7vw,78px);line-height:1.15;margin:0 0 18px;text-wrap:balance}
+.hero h1 span{color:var(--crema)}
+.hero p{color:var(--muted);max-width:44ch;margin:0 0 26px;font-size:19px}
+.btn{display:inline-block;background:var(--roast);color:var(--paper);border:0;padding:13px 26px;border-radius:999px;font:700 16px var(--body);cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--roast);border:1.5px solid var(--roast);margin-inline-start:10px}
+.cup{aspect-ratio:1;max-width:100%;border-radius:50%;background:radial-gradient(circle at 50% 50%,var(--crema) 0 28%,var(--roast) 29% 46%,var(--paper) 47% 60%,var(--line) 61% 62%,transparent 63%);position:relative}
+.cup::after{content:"";position:absolute;inset:38% 38%;border-radius:50%;border:3px solid var(--paper);border-top-color:transparent;transform:rotate(30deg);opacity:.7}
+.facts{display:flex;gap:36px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:20px;margin-top:8px}
+.facts b{display:block;font-family:var(--display);font-size:24px;color:var(--roast)}
+.facts small{color:var(--muted)}
+section{padding-block:56px}
+h2{font-family:var(--display);font-size:clamp(28px,4vw,40px);margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 28px}
+.board{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:28px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tabs button{font:500 15px var(--body);padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--roast);color:var(--paper);border-color:var(--roast)}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:6px 48px}
+.item{display:flex;align-items:baseline;gap:10px;padding-block:12px;border-bottom:1px dashed var(--line)}
+.item h3{margin:0;font-size:18px;font-weight:700}
+.item p{margin:0;color:var(--muted);font-size:14px}
+.item .dots{flex:1}
+.item .price{font-family:var(--display);color:var(--roast);font-size:19px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.story blockquote{margin:0;font-family:var(--display);font-size:clamp(22px,3vw,30px);line-height:1.5;color:var(--roast);border-inline-start:3px solid var(--crema);padding-inline-start:20px}
+.steps{display:grid;gap:18px}
+.steps div{display:grid;grid-template-columns:48px 1fr;gap:12px}
+.steps span{font-family:var(--display);font-size:28px;color:var(--crema)}
+.steps h3{margin:0;font-size:18px} .steps p{margin:0;color:var(--muted)}
+.ticket{display:grid;grid-template-columns:1fr 280px;background:var(--paper);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.ticket form{padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ticket label{display:grid;gap:6px;font-size:14px;color:var(--muted)}
+.ticket input,.ticket select{font:16px var(--body);padding:11px 12px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.ticket .full{grid-column:1/-1}
+.stub{background:var(--roast);color:var(--paper);padding:28px;border-inline-start:2px dashed var(--paper);display:grid;align-content:center;gap:8px}
+.stub b{font-family:var(--display);font-size:22px}
+.ok{grid-column:1/-1;color:var(--roast);font-weight:700;min-height:1.7em;margin:0}
+footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:760px){
+  .hero,.story,.ticket{grid-template-columns:1fr}
+  .menu{grid-template-columns:1fr}
+  .cup{max-width:260px;margin-inline:auto}
+  .ticket form{grid-template-columns:1fr}
+  .stub{border-inline-start:0;border-top:2px dashed var(--paper)}
+}
+@media (prefers-reduced-motion:no-preference){.btn{transition:transform .15s}.btn:hover{transform:translateY(-2px)}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="logo">بُن وحِكاية</div>
+  <nav aria-label="القائمة الرئيسية"><a href="#menu">المنيو</a><a href="#story">حكايتنا</a><a href="#book">احجز ترابيزة</a></nav>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>قهوة بتتحمص <span>كل صبح</span> في اسكندرية</h1>
+    <p>بن مختار من إثيوبيا وكولومبيا، بنحمصه بإيدينا على دفعات صغيرة، وبنقدمه في مكان هادي قدام البحر في ستانلي.</p>
+    <a class="btn" href="#menu">شوف المنيو</a><a class="btn ghost" href="#book">احجز ترابيزة</a>
+    <div class="facts">
+      <div><b>٧ص – ١٢م</b><small>كل أيام الأسبوع</small></div>
+      <div><b>١٢ نوع</b><small>بن مختص</small></div>
+      <div><b>٩٢°م</b><small>حرارة التقطير</small></div>
+    </div>
+  </div>
+  <div class="cup" role="img" aria-label="رسم فنجان قهوة من فوق"></div>
+</div>
+
+<section id="menu">
+  <h2>المنيو</h2>
+  <p class="lead">الأسعار بالجنيه المصري، وشاملة الضريبة.</p>
+  <div class="board">
+    <div class="tabs" role="group" aria-label="أقسام المنيو">
+      <button type="button" id="t-hot" aria-pressed="true" data-cat="hot">قهوة سخنة</button>
+      <button type="button" id="t-cold" aria-pressed="false" data-cat="cold">ساقعة</button>
+      <button type="button" id="t-sweet" aria-pressed="false" data-cat="sweet">حلويات</button>
+    </div>
+    <div class="menu" id="menuList"></div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="story">
+    <blockquote>«الفرق بين فنجان عادي وفنجان بيفضل في بالك هو ١٨ جرام بن طازة و٣٠ ثانية صبر.»</blockquote>
+    <div class="steps">
+      <div><span>١</span><div><h3>بنختار البن</h3><p>بنجرب كل شحنة قبل ما نشتريها، واللي مش بيعدي التذوق مش بيدخل المحل.</p></div></div>
+      <div><span>٢</span><div><h3>بنحمص على دفعات صغيرة</h3><p>٥ كيلو في المرة، عشان كل دفعة تاخد حقها في التحميص.</p></div></div>
+      <div><span>٣</span><div><h3>بنقدمه طازة</h3><p>البن مش بيقعد عندنا أكتر من ١٤ يوم من يوم ما اتحمص.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <h2>احجز ترابيزة</h2>
+  <p class="lead">هنأكدلك الحجز على الواتساب في خلال ساعة.</p>
+  <div class="ticket">
+    <form id="bookForm" novalidate>
+      <label>الاسم<input id="b-name" required autocomplete="name" placeholder="مثلاً: أحمد"></label>
+      <label>رقم الموبايل<input id="b-phone" required inputmode="tel" placeholder="01xxxxxxxxx"></label>
+      <label>اليوم<input id="b-date" type="date" required></label>
+      <label>الساعة<select id="b-time"><option>٩ صباحاً</option><option>١٢ ظهراً</option><option>٤ عصراً</option><option selected>٧ مساءً</option><option>٩ مساءً</option></select></label>
+      <label class="full">عدد الأفراد<select id="b-guests"><option>١</option><option selected>٢</option><option>٣</option><option>٤</option><option>٥ أو أكتر</option></select></label>
+      <button class="btn full" type="submit">أكّد الحجز</button>
+      <p class="ok" id="bookMsg" role="status"></p>
+    </form>
+    <div class="stub"><small>العنوان</small><b>طريق الجيش، ستانلي</b><small>الإسكندرية</small><small style="margin-top:14px">تليفون</small><b dir="ltr">03 000 0000</b></div>
+  </div>
+</section>
+
+<footer><span>© بُن وحِكاية</span><span>نموذج تصميم لمشروع وهمي، معمول كعينة شغل.</span></footer>
+</div>
+
+<script>
+const MENU={
+ hot:[["إسبريسو","دبل شوت، بن إثيوبي",55],["لاتيه","إسبريسو ولبن مبخر",75],["كابتشينو","رغوة كثيفة",70],["قهوة V60","بن اليوم، تقطير يدوي",85],["فلات وايت","دبل ريستريتو",80],["قهوة تركي","محوجة أو سادة",45]],
+ cold:[["آيس لاتيه","على تلج",80],["كولد برو","منقوع ١٨ ساعة",90],["آيس موكا","شوكولاتة داكنة",90],["إسبريسو تونيك","تونيك وليمون",95]],
+ sweet:[["تشيز كيك سان سباستيان","قطعة",95],["كوكيز بالشوكولاتة","قطعتين",60],["بسبوسة بالقشطة","طبق صغير",55],["كرواسون زبدة","بيتعمل الصبح",50]]
+};
+const ar=n=>n.toLocaleString('ar-EG');
+const list=document.getElementById('menuList');
+function show(cat){
+  list.innerHTML=MENU[cat].map(([n,d,p])=>`<div class="item"><div><h3>${n}</h3><p>${d}</p></div><span class="dots"></span><span class="price">${ar(p)} ج</span></div>`).join('');
+  document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.cat===cat));
+}
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>show(b.dataset.cat)));
+show('hot');
+document.getElementById('bookForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=document.getElementById('b-name').value.trim(),phone=document.getElementById('b-phone').value.trim(),date=document.getElementById('b-date').value;
+  const msg=document.getElementById('bookMsg');
+  if(!name||!/^01\d{9}$/.test(phone)||!date){msg.textContent='اكتب الاسم، ورقم موبايل من ١١ رقم يبدأ بـ 01، واختار اليوم.';return;}
+  msg.textContent=`تمام يا ${name}، طلب الحجز وصل. (ده نموذج، ومفيش حجز حقيقي بيتبعت.)`;
+});
+</script>
+
+</html>
